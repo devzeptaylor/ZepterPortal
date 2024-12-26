@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-iqi!p@akhqz7&5p99w$=*ms_x_8alqo*1z8mu(*gnhu)1@e=mb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.99.248']
 
 
 # Application definition
@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'ZepterPortal.wsgi.application'
 DATABASES = {
    	'default': {
        		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       		 'NAME': 'postgres',
-       		 'USER': 'postgres',
-       		 'PASSWORD': '123456',
+       		 'NAME': 'myproject',
+       		 'USER': 'myprojectuser',
+       		 'PASSWORD': 'password',
       		 'HOST': 'localhost',
        		 'PORT': '',
    	}
@@ -119,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT= 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
