@@ -1,5 +1,6 @@
+ZepterPortal/settings.py
 .env
-settings.py
+
 
 # Django settings secret keys
 config/settings/*.py
