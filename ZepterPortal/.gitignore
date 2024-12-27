@@ -1,0 +1,7 @@
+.env
+settings.py
+
+# Django settings secret keys
+config/settings/*.py
+!config/settings/__init__.py
+config/settings/*.env
