@@ -30,7 +30,7 @@ DEBUG = True
 
 
 #ALLOWED_HOSTS = ['192.168.99.248']
-ALLOWED_HOSTS = [] #for localhost testing ZepterPortal/ZepterPortal/settings.py
+ALLOWED_HOSTS = [os.getenv('SERVER_IPPI', '')] #for localhost testing ZepterPortal/ZepterPortal/settings.py
 
 # Application definition
 
