@@ -83,17 +83,17 @@ WSGI_APPLICATION = 'ZepterPortal.wsgi.application'
 from dotenv import load_dotenv
 
 # Загружаем переменные окружения из файла .env
-#load_dotenv()
+load_dotenv()
 
 DATABASES = {
-   	'default': {
-       		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       		 'NAME': 'postgres',
-       		 'USER': 'postgres',
-       		 'PASSWORD': '123456',
-      		 'HOST': 'localhost',
-       		 'PORT': '5432',
-   	}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DATABASE_NAME', 'default_db_name'),
+        'USER': os.getenv('DATABASE_USER', 'default_user'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'default_password'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASE_PORT', '5432'),
+    }
 }
 
 #print(os.getenv('DATABASE_NAME', 'default_db_name'))
