@@ -92,9 +92,11 @@ DATABASES = {
         'USER': os.getenv('DATABASE_USER', 'default_user'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'default_password'),
         'HOST': os.getenv('DATABASE_HOST', 'localhost'),
-        'PORT': os.getenv('DATABASE_PORT', '5432'),
+        'PORT': os.getenv('DATABASE_PORT', ''),
     }
 }
+
+
 
 #print(os.getenv('DATABASE_NAME', 'default_db_name'))
 
