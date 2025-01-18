@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import logging
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+# Загружаем переменные окружения из файла .env
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,10 +83,7 @@ WSGI_APPLICATION = 'ZepterPortal.wsgi.application'
 
 # .env
 
-from dotenv import load_dotenv
 
-# Загружаем переменные окружения из файла .env
-load_dotenv()
 
 DATABASES = {
     'default': {
