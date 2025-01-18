@@ -19,14 +19,17 @@ from django.urls import path
 from rest_framework.routers import SimpleRouter
 
 from conatcts.views import contacts_page, TelefonView, order_app
-
+from django.conf.urls.static import static
+from django.conf import settings
 router = SimpleRouter()
 
-router.register('api/telefons',TelefonView)
+#router.register('api/telefons',TelefonView)
+router.register('test',TelefonView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', contacts_page ),
     path('phone/', order_app ),
 ]
 
-urlpatterns += router.urls
+#urlpatterns += router.urls
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
