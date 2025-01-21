@@ -27,7 +27,7 @@ router = SimpleRouter()
 router.register('test',TelefonView)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', contacts_page ),
+    path('', contacts_page , name= 'home'),
     path('phone/', order_app ),
 ]
 
