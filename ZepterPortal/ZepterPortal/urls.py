@@ -13,12 +13,13 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+   path('', contacts_page , name= 'home'),
 """
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import SimpleRouter
 
-from conatcts.views import contacts_page, TelefonView, order_app
+from conatcts.views import contacts_page, TelefonView, order_app, show_oracle_data, show_stat
 from django.conf.urls.static import static
 from django.conf import settings
 router = SimpleRouter()
@@ -27,8 +28,10 @@ router = SimpleRouter()
 router.register('test',TelefonView)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', contacts_page , name= 'home'),
-    path('phone/', order_app ),
+    path('phone/', contacts_page ),
+    path('temp/', show_oracle_data, name = 'temp' ),
+    path('', order_app , name= 'home'),
+    path('stat', show_stat , name= 'stat'),
 ]
 
 #urlpatterns += router.urls

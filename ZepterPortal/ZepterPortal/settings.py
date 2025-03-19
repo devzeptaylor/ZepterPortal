@@ -94,10 +94,32 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'default_password'),
         'HOST': os.getenv('DATABASE_HOST', 'localhost'),
         'PORT': os.getenv('DATABASE_PORT', ''),
+    },
+    'oracle_db': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'office',  # SID или Service Name вашей Oracle базы данных
+        'USER': 'soft',
+        'PASSWORD': 'ghtldt4yst',
+        'HOST': '192.168.99.4',
+        'PORT': '1521',  # стандартный порт для Oracle
     }
 }
 
+"""DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.oracle",
+        "NAME": (
+                "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.99.4)(PORT=1521))"
+                "(CONNECT_DATA=(SERVICE_NAME=OFFICE)))"
+                ),
+        "USER": "soft",
+        "PASSWORD": "ghtldt4yst",
+        "HOST": "192.168.99.4",
+        "PORT": "1540",
+    }
+}"""
 
+#DATABASE_ROUTERS = ['myproject.routers.OracleRouter']
 
 #print(os.getenv('DATABASE_NAME', 'default_db_name'))
 
